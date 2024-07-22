@@ -8,10 +8,10 @@ const modelo = () => {
     descricao: [],
   };
 
-  atividade.dia = prompt("Qual dia? ");
+  atividade.dia = prompt("Qual é o dia? ");
 
   while (true) {
-    let resposta = prompt("O que fez nesse dia? ");
+    let resposta = prompt("O que você fez nesse dia? ");
 
     if (resposta == "acabou") break;
 
@@ -26,7 +26,7 @@ const criar = () => {
 
   atividades.push(atividade);
 
-  console.log("Atividade criada");
+  console.log("Atividade cadastrada com sucesso! :)");
 };
 
 const listar = () => {

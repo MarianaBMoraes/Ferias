@@ -1,43 +1,31 @@
 const prompt = require("prompt-sync")();
 
-const {
-  adicionarAtividade,
-  listarAtividade,
-  atualizarAtividade,
-  removerAtividade,
-} = require("./atividades");
+const { criar, atualizar, remover, listar } = require("./atividades.js");
 
-const exibirMenu() => {
-    while (true) {
-        console.log("\n O que você fez nas férias? ");
-        console.log("1. Adicionar atividade");
-        console.log("2. Listar todas as atividades");
-        console.log("3. Atualizar uma atividade");
-        console.log("4. Remover atividade");
-        console.log("5. Sair");
-      
-        let escolha = prompt("Escolha uma opção: ");
+while (true) {
+  console.log(
+    "O que deseja fazer?\n1 - Criar\n2 - Atualizar\n3 - Remover\n4 - Listar\n5 - Sair\n"
+  );
+  let opcao = Number(prompt());
 
-
-        switch (escolha)) {
-            case 1:
-                const diaAdd = prompt('digite o dia da atividade (dd/mm/aa):');
-                const atividadeAdd = prompt('digite a ativiade realizada:');
-                adicionarAtividade(diaAdd,atividadeAdd);
-                console.log("Atividade adicionada com sucesso! :)")
-                break;
-            
-            case 2:
-                console.log("\nLista de Atividades:")
-                listarAtividade();                
-                break;
-            case 3:
-                const indexAtualizar
-        
-            default:
-                break;
-        }
-    }
+  switch (opcao) {
+    case 1:
+      criar();
+      break;
+    case 2:
+      atualizar();
+      break;
+    case 3:
+      remover();
+      break;
+    case 4:
+      listar();
+      break;
+    case 5:
+      process.exit();
+      break;
+    default:
+      console.log("Opção inválida");
+      break;
+  }
 }
-    
-
