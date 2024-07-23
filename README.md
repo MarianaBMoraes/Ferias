@@ -1,6 +1,6 @@
 ### README
 
-#### Gerenciador Simples de Tarefas
+#### Gerenciador Simples de Tarefas Realizadas Nas Férias
 
 Este aplicativo em Node.js oferece um sistema básico de gerenciamento de tarefas onde os usuários podem criar, atualizar, remover, listar tarefas e sair do programa.
 
