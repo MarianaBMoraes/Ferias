@@ -22,10 +22,11 @@ while (true) {
       listar();
       break;
     case 5:
+      console.log("Até logo! ;)");
       process.exit();
       break;
     default:
-      console.log("Opção inválida");
+      console.log("Opção inválida.");
       break;
   }
 }

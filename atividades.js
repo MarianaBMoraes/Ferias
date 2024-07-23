@@ -5,19 +5,23 @@ const atividades = [];
 const modelo = () => {
   let atividade = {
     dia: undefined,
-    descricao: [],
+    descriçao: [],
   };
 
-  atividade.dia = prompt("Qual é o dia? ");
+  atividade.dia = prompt("Qual o dia? ");
+  let resposta;
+
+  console.log("Quando terminar digite 'acabou'!")
 
   while (true) {
-    let resposta = prompt("O que você fez nesse dia? ");
+    resposta = prompt("O que fez nesse dia? ");
 
-    if (resposta == "acabou") break;
-
-    atividade.descricao.push(resposta);
+    if (resposta == "acabou") {
+      break;
+    } else {
+      atividade.descriçao.push(resposta);
+    }
   }
-
   return atividade;
 };
 
@@ -31,30 +35,32 @@ const criar = () => {
 
 const listar = () => {
   atividades.forEach((atividade, indice) => {
-    console.log(`${indice + 1}. ${atividade}`);
+    console.log(`${indice + 1}. ${atividade.dia}`);
+    
+    atividade.descriçao.forEach(descriçao => console.log(`- ${descriçao}`));
   });
 };
 
 const atualizar = () => {
   listar();
 
-  let indice = prompt("Qual indice deseja atualizar? ");
+  let indice = prompt("Qual índice você deseja atualizar? ");
 
   let atividade = modelo();
 
   atividades[--indice] = atividade;
 
-  console.log("Atualizado");
+  console.log("Índice atualizado com sucesso! ;)");
 };
 
 const remover = () => {
   listar();
 
-  let indice = prompt("Qual indice sera removido? ");
+  let indice = prompt("Qual índice você deseja remover? ");
 
   atividades.splice(--indice, 1);
 
-  console.log("Removido");
+  console.log("Índice removido com sucesso! ^.^");
 };
 
 module.exports = {
